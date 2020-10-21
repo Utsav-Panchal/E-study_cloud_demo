@@ -1,0 +1,42 @@
+{% extends "webapp/base.html" %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
+
+{% block page_title %} Settings {% endblock page_title %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">User Settings</li>
+</ol>
+{% endblock breadcrumbs %}
+
+{% block page_content %}
+<div class="row">
+    <div class="col-lg-7">
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+            <div class="card-body">
+                <form id="{{ opts.model_name }}-form" action="" method="post" enctype="multipart/form-data" autocomplete="off">
+                    {% include "webapp/partials/form_hidden_fields.html" %}
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form.first_name|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{ form.last_name|as_crispy_field }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ form.email|as_crispy_field }}
+                    </div>
+                    <button class="btn btn-primary" type="submit">
+                    Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock page_content%}

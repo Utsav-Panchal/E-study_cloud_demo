@@ -1,0 +1,43 @@
+{% extends "webapp/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+{% load crispy_forms_tags %}
+
+{% block title %}Django Circle - Sign In{% endblock title %}
+
+{% block body %}
+<body class="bg-secondary">
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                <div class="card-body">
+                                    <form class="login" method="POST" action="{% url 'account_login' %}">
+                                        {% csrf_token %}
+                                        {{ form|crispy }}
+                                        {% if redirect_field_value %}
+                                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                                        {% endif %}
+                                        <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                                            <a class="small" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                                            <button class="btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <div class="small"><a href="{{ signup_url }}">Need an account? Sign up!</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+{% endblock body %}
