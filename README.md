@@ -1,12 +1,34 @@
 # Maintainable Django Design Pattern Architecture
 
-Powered by [Django Circle](https://djangocircle.com/), Simple, easy to understand and maintainable django project architecture.
+Powered by [Django Circle](https://djangocircle.com/).
 
-To start new django project, don't need to take care and research to setup basic process and installation process. All things will get here.
 
-# Getting Started
+### Table of Content:
+- [Overview](#overview)
+- [What is Django Circle?](#what-is-django-circle?)
+- [Benefits to use this repository for django project](#benefits-to-use-this-repository-for-django-project)
+- [Features of Django Design pattern architecture](#features-of-django-design-pattern-architecture)
+- [Installation](#instalation)
+- [Requirements](#requirements)
+- [Project Directory/File Structure](#project-directory/file-structure)
 
-## Features
+
+# Overview
+- This is a simple, easy to understand and maintainable django project architecture which contains base architecture for any project.
+- To start new django project, don't need to take care and research to setup basic process and installation process. All things will get here.
+
+
+# What is Django Circle ?
+- Django Circle is a community to share solutions of problem which can be solved by using django framework.
+
+# Benefits to use this repository for django project
+- No need to worry about setup process. Now it is simple process, just need to clone and ready to start work on it.
+- Scalable application base structure
+- Easy to maintain and modify
+- Ready architecture to work with different environments : `local`, `staging`, `production`.
+
+
+# Features of Django Design Pattern Architecture
 
 - For Django 3.0
 - Works with Python 3.7 or latest version
@@ -27,6 +49,12 @@ To start new django project, don't need to take care and research to setup basic
 
 ```sh
 git clone https://github.com/djangocircle/django-design-pattern-architecture.git
+```
+
+**Install pre-commit hooks:**
+
+```sh
+pre-commit install
 ```
 
 ## Requirements
@@ -61,66 +89,97 @@ git clone https://github.com/djangocircle/django-design-pattern-architecture.git
     sh setup_environments/03-setup-virtualenv.sh
   ```
 
-**Install pre-commit hooks:**
-
-```sh
-pre-commit install
-```
-
 ## Project Directory/File Structure
 
 ```
-django-design-pattern-architecture/
-        app_modules/
-            apis/
-                base/
-                     renderers.py
-                <--other modules directory-->/
-                urls.py
-        core_apps/
-        	base/
-        		models.py
-        	<--django app modules-->/
-        static/
-        	vender/
-        		css/
-        		js/
-        	webapp/
-        		assets/
-        		css/
-        		js/
-        templates/
-        	webapp/
-        	<--django app templates>/
-        utils/
-        web_apps/
-        	base/
-        		mixins.py
-        		views.py
-        	<-- django app modules web app directory -->/
-        	apps.py
-        	urls.py
-        	views.py
-        django_circle/
-        	settings/
-        		base.py
-        		local.py
-        		production.py
-        		test.py
-        	asgi.py
-        	urls.py
-        	wsgi.py
-        requirements/
-        	base.txt
-        	local.txt
-        	production.txt
-        setup_environments/
-        	<-- Shell scripts files for environment setup -->
-        .env.example
-        .gitignore
-        .pre-commit-config.yaml
-        manage.py
-        README.md
+django-design-pattern-architecture
+├── app_modules
+│   ├── apis
+│   │   ├── auth
+│   │   │   ├── serializers.py
+│   │   │   ├── urls.py
+│   │   │   └── views.py
+│   │   ├── base
+│   │   │   ├── renderers.py
+│   │   │   └── renderers.py
+│   │   └── urls.py
+│   ├── core_apps
+│   │   ├── base
+│   │   │   ├── models.py
+│   │   └── users
+│   │       ├── admin.py
+│   │       ├── apps.py
+│   │       ├── models.py
+│   │       └── signals.py
+│   ├── static
+│   │   ├── vender
+│   │   │   ├── charts
+│   │   │   ├── css
+│   │   │   └── js
+│   │   └── webapp
+│   │       ├── assets
+│   │       │   └── img
+│   │       ├── css
+│   │       │   └── styles.css
+│   │       └── js
+│   │           └── scripts.js
+│   ├── templates
+│   │   ├── account
+│   │   │   ├── email_confirm.html
+│   │   │   ├── login.html
+│   │   │   ├── password_reset_done.html
+│   │   │   ├── password_reset_from_key_done.html
+│   │   │   ├── password_reset_from_key.html
+│   │   │   ├── password_reset.html
+│   │   │   ├── signup.html
+│   │   │   └── verification_sent.html
+│   │   └── webapp
+│   │       ├── base.html
+│   │       ├── includes
+│   │       │   ├── header.html
+│   │       │   └── sidebar.html
+│   │       ├── index.html
+│   │       ├── partials
+│   │       │   ├── form_hidden_fields.html
+│   │       │   └── messages.html
+│   │       └── users
+│   │           └── profile.html
+│   ├── utils
+│   └── web_apps
+│       ├── apps.py
+│       ├── authentication
+│       ├── base
+│       │   ├── mixins.py
+│       │   └── views.py
+│       ├── urls.py
+│       ├── users
+│       │   ├── forms.py
+│       │   ├── urls.py
+│       │   └── views.py
+│       └── views.py
+├── django_circle
+│   ├── asgi.py
+│   ├── settings
+│   │   ├── base.py
+│   │   ├── local.py
+│   │   ├── production.py
+│   │   └── test.py
+│   ├── urls.py
+│   └── wsgi.py
+├── .env
+├── .env.example
+├── .gitignore
+├── manage.py
+├── .pre-commit-config.yaml
+├── README.md
+├── requirements
+│   ├── base.txt
+│   ├── local.txt
+│   └── production.txt
+└── setup_environments
+    ├── 01-install-python3x.sh
+    ├── 02-install-postgresql.sh
+    └── 03-setup-virtualenv.sh
 ```
 
 ### Run Server
