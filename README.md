@@ -1,13 +1,12 @@
-# Maintainable Django Design Pattern Architecture
+# Maintainable E-Study Django Design Pattern Architecture
 
-Powered by [Django Circle](https://djangocircle.com/).
 
 
 ### Table of Content:
 - [Overview](#overview)
-- [What is Django Circle?](#what-is-django-circle?)
+- [What is Django Circle?](#what-is-E-Study?)
 - [Benefits to use this repository for django project](#benefits-to-use-this-repository-for-django-project)
-- [Features of Django Design pattern architecture](#features-of-django-design-pattern-architecture)
+- [Features of E-Study Django Design pattern architecture](#features-of-django-design-pattern-architecture)
 - [Installation](#instalation)
 - [Requirements](#requirements)
 - [Project Directory/File Structure](#project-directory/file-structure)
@@ -48,7 +47,7 @@ Powered by [Django Circle](https://djangocircle.com/).
 **Clone the repo:**
 
 ```sh
-git clone https://github.com/djangocircle/django-design-pattern-architecture.git
+git clone https://github.com/Utsav-Panchal/E-study_cloud_demo.git
 ```
 
 **Install pre-commit hooks:**
@@ -192,10 +191,10 @@ python manage.py runserver
 
 # License
 
-© Django Circle - All rights reserved.
+© E-Study - All rights reserved.
 
 ### Contact
 
-Django Circle - djangocircle@gmail.com
+E-Study - putsavnarendra1998@gmail.com
 
-http://djangocircle.com/
+
